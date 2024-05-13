@@ -67,9 +67,8 @@ public class Empleado {
         this.minutosTardanza = minutosTardanza;
     }
 
-   
     public String verDetallle() {
-        return "Empleado " + id
+        return "\nEmpleado "
                 + "\nCodigo: " + codigo
                 + "\nNombre: " + nombre
                 + "\nTipo Contrato: " + tipoContrato

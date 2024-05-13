@@ -1,5 +1,7 @@
 package com.mycompany.app.Models;
 
+import javax.swing.JTextArea;
+
 public class ListaEmpleados {
 
     //punteros
@@ -13,9 +15,12 @@ public class ListaEmpleados {
 
     //metodo para agregar al inicio 
     public void agregarInicio(Empleado empleado) {
-        inicio = new Nodo(empleado, inicio);
-        if (fin == null) {
-            fin = inicio;
+        if (!estaVacia()) {
+            //creamos el nodo 
+            fin.siguiente = new Nodo(empleado);
+            fin = fin.siguiente;
+        } else {
+            inicio = fin = new Nodo(empleado);
         }
         System.out.println("Registrado");
     }
@@ -24,7 +29,7 @@ public class ListaEmpleados {
         return inicio == null;
     }
 
-    public String mostrarLista() {
+    public void mostrarLista(JTextArea texDatos) {
         String mensaje = "";
 
         if (estaVacia()) {
@@ -32,11 +37,11 @@ public class ListaEmpleados {
         } else {
             Nodo recorrer = inicio;
             while (recorrer != null) {
-                mensaje += "|" + recorrer.getEmpleado().verDetallle() + "|";
+                mensaje += "\n|" + recorrer.getEmpleado().verDetallle() + "|";
                 recorrer = recorrer.siguiente;
             }
         }
-        return mensaje;
+        texDatos.setText(mensaje);
     }
 
 }
