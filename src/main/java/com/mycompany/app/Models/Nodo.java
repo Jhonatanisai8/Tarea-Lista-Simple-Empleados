@@ -17,4 +17,8 @@ public class Nodo {
         siguiente = nodo;
     }
 
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
 }
