@@ -19,7 +19,24 @@ public class ListaEmpleados {
         }
         System.out.println("Registrado");
     }
-    
-    
+
+    public boolean estaVacia() {
+        return inicio == null;
+    }
+
+    public String mostrarLista() {
+        String mensaje = "";
+
+        if (estaVacia()) {
+            mensaje = "Lista Vacia";
+        } else {
+            Nodo recorrer = inicio;
+            while (recorrer != null) {
+                mensaje += "|" + recorrer.getEmpleado().verDetallle() + "|";
+                recorrer = recorrer.siguiente;
+            }
+        }
+        return mensaje;
+    }
 
 }
