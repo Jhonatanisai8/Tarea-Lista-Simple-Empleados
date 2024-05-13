@@ -1,6 +1,7 @@
 package com.mycompany.app.Models;
 
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialOceanicIJTheme;
+import javax.swing.JOptionPane;
 
 public class frmEmpleados extends javax.swing.JFrame {
 
@@ -29,10 +30,19 @@ public class frmEmpleados extends javax.swing.JFrame {
         Empleado empleado = new Empleado(codigo, nombre, tipoContrato, sueldo, montoMovilidad, minutosTardanza);
         listaEmpleados.agregarInicio(empleado);
         listaEmpleados.mostrarLista(texDatos);
+        limpiarCampos();
     }
 
     public void eliminar() {
+        String nombre;
+        nombre = JOptionPane.showInputDialog(null, "Ingresa el nombre del empleado a eliminar: ");
 
+        if (listaEmpleados.eliminarEmpleadoEspecifico(nombre)) {
+            JOptionPane.showMessageDialog(rootPane, "Eliminado");
+        listaEmpleados.mostrarLista(texDatos);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "No encontrado");
+        }
     }
 
     public void limpiarCampos() {
