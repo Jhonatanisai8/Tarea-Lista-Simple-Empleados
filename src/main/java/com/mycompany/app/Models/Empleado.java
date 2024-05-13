@@ -67,8 +67,8 @@ public class Empleado {
         this.minutosTardanza = minutosTardanza;
     }
 
-    @Override
-    public String toString() {
+   
+    public String verDetallle() {
         return "Empleado " + id
                 + "\nCodigo: " + codigo
                 + "\nNombre: " + nombre
