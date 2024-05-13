@@ -31,6 +31,19 @@ public class frmEmpleados extends javax.swing.JFrame {
         listaEmpleados.mostrarLista(texDatos);
     }
 
+    public void eliminar() {
+
+    }
+
+    public void limpiarCampos() {
+        txtCodigo.setText(null);
+        txtMinutosTardanza.setText(null);
+        txtMontoMovilidad.setText(null);
+        txtNombre.setText(null);
+        txtSueldo.setText(null);
+        txtCodigo.requestFocus();
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -46,6 +59,7 @@ public class frmEmpleados extends javax.swing.JFrame {
         txtMontoMovilidad = new javax.swing.JTextField();
         txtMinutosTardanza = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
+        btnRegistrar1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         texDatos = new javax.swing.JTextArea();
@@ -105,6 +119,14 @@ public class frmEmpleados extends javax.swing.JFrame {
             }
         });
 
+        btnRegistrar1.setFont(new java.awt.Font("DialogInput", 0, 14)); // NOI18N
+        btnRegistrar1.setText("Eliminar");
+        btnRegistrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -112,14 +134,14 @@ public class frmEmpleados extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(txtCodigo)
                     .addComponent(txtSueldo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtMontoMovilidad, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
+                        .addComponent(txtMontoMovilidad)
                         .addGap(112, 112, 112)
-                        .addComponent(txtMinutosTardanza, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE))
+                        .addComponent(txtMinutosTardanza))
                     .addComponent(txtNombre))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,8 +150,11 @@ public class frmEmpleados extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(cbxTipoContrato, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                        .addGap(358, 358, 358)))
+                        .addGap(47, 47, 47)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistrar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(153, 153, 153)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -144,7 +169,8 @@ public class frmEmpleados extends javax.swing.JFrame {
                             .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtMontoMovilidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtMinutosTardanza, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRegistrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,13 +225,13 @@ public class frmEmpleados extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jTextField6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE))
+                        .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)))
+                        .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)))
                 .addGap(51, 51, 51))
         );
         jPanel3Layout.setVerticalGroup(
@@ -280,6 +306,10 @@ public class frmEmpleados extends javax.swing.JFrame {
         registrarEmpleafo();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void btnRegistrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrar1ActionPerformed
+        eliminar();
+    }//GEN-LAST:event_btnRegistrar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,6 +347,7 @@ public class frmEmpleados extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnRegistrar1;
     private javax.swing.JComboBox<String> cbxTipoContrato;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
